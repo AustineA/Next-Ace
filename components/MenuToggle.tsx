@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const Path = (props) => (
   <motion.path
-    fill="transparent"
     strokeWidth="2"
     stroke="var(--main-bg)"
     strokeLinecap="round"
@@ -13,7 +12,7 @@ const Path = (props) => (
 
 export const MenuToggle = ({ toggle }) => (
   <Button onClick={toggle}>
-    <svg width="20" height="20" viewBox="0 0 20 20">
+    <svg width="20" height="20" viewBox="0 0 22 22">
       <Path
         variants={{
           closed: { d: "M 2 2.5 L 20 2.5" },
