@@ -4,12 +4,12 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 import { AnimatePresence } from "framer-motion";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps, router }: AppProps) {
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      <main className={inter.className}>
-        <Component {...pageProps} />
-      </main>
-    </AnimatePresence>
+    <main className={inter.className}>
+      <AnimatePresence>
+        <Component {...pageProps} key={router.asPath} />
+      </AnimatePresence>
+    </main>
   );
 }

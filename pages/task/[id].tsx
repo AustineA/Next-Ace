@@ -7,7 +7,11 @@ const Task = () => {
 
   return (
     <PageAnimation color={color} x={x} y={y}>
-      <div>
+      <div
+        onClick={() => {
+          router.push("/");
+        }}
+      >
         Task {id} {color}
       </div>
     </PageAnimation>
