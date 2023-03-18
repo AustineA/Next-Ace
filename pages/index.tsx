@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import Status from "@/components/status";
-import Content from "@/components/content";
-import Card from "@/components/card";
+import Status from "@/components/Status";
+import Content from "@/components/Content";
+import Card from "@/components/Card";
 
 const inter = Inter({ subsets: ["latin"] });
 
