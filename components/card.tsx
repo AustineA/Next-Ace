@@ -3,7 +3,7 @@ import { Squircle } from "corner-smoothing";
 import CircularProgress from "./CircularProgress";
 import { motion } from "framer-motion";
 
-const Card = ({ percentDone = 0, title, done, total, color }) => {
+const Card = ({ percentDone = 0, title, done, total, color, openTask }) => {
   return (
     <ProgresCard
       cornerRadius={30}
@@ -12,6 +12,7 @@ const Card = ({ percentDone = 0, title, done, total, color }) => {
         scale: 0.97,
         opacity: 0.9,
       }}
+      onClick={openTask}
     >
       <div className="card-inner">
         <div>

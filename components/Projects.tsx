@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import Card from "@/components/Card";
 import { projects } from "@/services/data";
+import { useRouter } from "next/router";
 
 const Projects = () => {
+  const router = useRouter();
+
   return (
     <ProjectPage>
       {projects.map((project) => (
@@ -13,6 +16,9 @@ const Projects = () => {
           total={project.total}
           percentDone={project?.percentDone}
           color={project?.color}
+          openTask={() => {
+            router.push("/task/" + project.id);
+          }}
         />
       ))}
     </ProjectPage>
