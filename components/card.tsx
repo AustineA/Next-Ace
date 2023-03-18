@@ -43,7 +43,7 @@ const ProgresCard = styled(motion(Squircle))`
   justify-content: center;
   align-items: center;
   color: var(--text);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 
   .card-inner {
     display: flex;
