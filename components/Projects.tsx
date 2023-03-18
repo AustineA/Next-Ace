@@ -4,6 +4,24 @@ import { projects } from "@/services/data";
 import Router from "next/router";
 
 const Projects = () => {
+  const handleClick = (event, project) => {
+    const x = event.clientX + "px";
+    const y = event.clientY + "px";
+    console.log("Clicked at coordinates (" + x + ", " + y + ")");
+
+    Router.push(
+      {
+        pathname: "/task/" + project?.id,
+        query: {
+          color: project?.color,
+          x,
+          y,
+        },
+      },
+      "/task/" + project?.id
+    );
+  };
+
   return (
     <ProjectPage>
       {projects.map((project) => (
@@ -14,16 +32,8 @@ const Projects = () => {
           total={project.total}
           percentDone={project?.percentDone}
           color={project?.color}
-          openTask={() => {
-            Router.push(
-              {
-                pathname: "/task/" + project.id,
-                query: {
-                  color: project.color,
-                },
-              },
-              "/task/" + project.id
-            );
+          openTask={(e) => {
+            handleClick(e, project);
           }}
         />
       ))}

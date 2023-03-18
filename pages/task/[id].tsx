@@ -1,16 +1,16 @@
-import Content from "@/components/Content";
+import PageAnimation from "@/components/PageAnimation";
 import { useRouter } from "next/router";
 
 const Task = () => {
   const router = useRouter();
-  const { id, color } = router.query;
+  const { id, color, x, y }: any = router.query;
 
   return (
-    <Content>
+    <PageAnimation color={color} x={x} y={y}>
       <div>
         Task {id} {color}
       </div>
-    </Content>
+    </PageAnimation>
   );
 };
 
