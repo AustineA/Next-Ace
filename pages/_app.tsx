@@ -7,7 +7,7 @@ import { AnimatePresence } from "framer-motion";
 export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <main className={inter.className}>
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         <Component {...pageProps} key={router.asPath} />
       </AnimatePresence>
     </main>

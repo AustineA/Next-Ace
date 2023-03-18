@@ -11,7 +11,9 @@ const PageAnimation = ({ children, color, x = "50%", y = "50%" }) => {
       clipPath: `circle(5% at ${x} ${y})`,
     },
     animate: { clipPath: "circle(75%)" },
-    exit: { clipPath: `circle(0% at ${xAxis} ${YAxis})` },
+    exit: {
+      // clipPath: `circle(0% at ${xAxis} ${YAxis})`,
+    },
   };
   return (
     <Animate
