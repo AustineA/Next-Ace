@@ -41,7 +41,7 @@ const Button = styled.button`
   outline: none;
   border: none;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   top: 3rem;
   right: 1.5rem;
   width: 4rem;
@@ -49,4 +49,6 @@ const Button = styled.button`
   padding-top: 1rem;
   border-radius: 50%;
   background: var(--primary);
+  z-index: 100;
+  box-shadow: 0 1rem 2rem rgba(31, 25, 25, 0.3);
 `;
