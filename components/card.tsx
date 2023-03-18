@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { Squircle } from "react-ios-corners";
+import { Squircle } from "corner-smoothing";
 import CircularProgress from "./CircularProgress";
 
 const Card = () => {
   return (
-    <ProgresCard radius={40}>
+    <ProgresCard cornerRadius={30}>
       <div className="card-inner">
         <div>
           <h3>Examen</h3>
