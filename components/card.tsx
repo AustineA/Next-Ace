@@ -2,13 +2,15 @@ import styled from "styled-components";
 import { Squircle } from "corner-smoothing";
 import CircularProgress from "./CircularProgress";
 
-const Card = ({ percentDone = 0 }) => {
+const Card = ({ percentDone = 0, title, done, total, color }) => {
   return (
-    <ProgresCard cornerRadius={30}>
+    <ProgresCard cornerRadius={30} style={{ background: `var(${color})` }}>
       <div className="card-inner">
         <div>
-          <h3>Examen</h3>
-          <span>10/10 To be done...</span>
+          <h3>{title}</h3>
+          <span>
+            {done}/{total} To be done...
+          </span>
         </div>
         <div>
           <CircularProgress
@@ -32,6 +34,7 @@ const ProgresCard = styled(Squircle)`
   justify-content: center;
   align-items: center;
   color: var(--text);
+  margin-bottom: 3rem;
 
   .card-inner {
     display: flex;
