@@ -1,10 +1,18 @@
 import styled from "styled-components";
 import { Squircle } from "corner-smoothing";
 import CircularProgress from "./CircularProgress";
+import { motion } from "framer-motion";
 
 const Card = ({ percentDone = 0, title, done, total, color }) => {
   return (
-    <ProgresCard cornerRadius={30} style={{ background: `var(${color})` }}>
+    <ProgresCard
+      cornerRadius={30}
+      style={{ background: `var(${color})` }}
+      whileTap={{
+        scale: 0.97,
+        opacity: 0.9,
+      }}
+    >
       <div className="card-inner">
         <div>
           <h3>{title}</h3>
@@ -27,7 +35,7 @@ const Card = ({ percentDone = 0, title, done, total, color }) => {
 
 export default Card;
 
-const ProgresCard = styled(Squircle)`
+const ProgresCard = styled(motion(Squircle))`
   min-height: 14rem;
   background: var(--solid-1);
   display: flex;

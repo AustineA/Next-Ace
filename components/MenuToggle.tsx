@@ -11,7 +11,13 @@ const Path = (props) => (
 );
 
 export const MenuToggle = ({ toggle }) => (
-  <Button onClick={toggle}>
+  <Button
+    onClick={toggle}
+    whileTap={{
+      scale: 0.85,
+      opacity: 0.85,
+    }}
+  >
     <svg width="20" height="20" viewBox="0 0 22 22">
       <Path
         variants={{
@@ -37,7 +43,7 @@ export const MenuToggle = ({ toggle }) => (
   </Button>
 );
 
-const Button = styled.button`
+const Button = styled(motion.button)`
   outline: none;
   border: none;
   cursor: pointer;
