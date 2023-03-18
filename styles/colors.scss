@@ -1,6 +1,8 @@
 :root {
   --main-bg: #141827;
   --primary: #eeffac;
+  --text: #1f1919;
+  --text-secondary: #53555c;
   --white: #fff;
   --solid-1: #98fff3;
   --solid-2: var(--primary);
@@ -12,7 +14,9 @@
   --solid-8: #c6ffc1;
   --solid-9: #fff9c1;
   --solid-10: #ffbd98;
+
+  --border-bg: rgba(31, 25, 25, 0.33);
 }
 
-body.dark {
-}
+// body.dark {
+// }
