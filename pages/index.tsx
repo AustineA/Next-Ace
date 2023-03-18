@@ -2,8 +2,12 @@ import Head from "next/head";
 import Status from "@/components/Status";
 import Content from "@/components/Content";
 import Projects from "@/components/Projects";
+import { MenuToggle } from "@/components/MenuToggle";
+import { motion, useCycle } from "framer-motion";
 
 export default function Home() {
+  const [isOpen, toggleOpen] = useCycle(false, true);
+
   return (
     <>
       <Head>
@@ -13,6 +17,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Content>
+        <motion.div initial={false} animate={isOpen ? "open" : "closed"}>
+          <MenuToggle toggle={() => toggleOpen()} />
+        </motion.div>
         <Status />
         <Projects />
       </Content>

@@ -17,7 +17,7 @@ const Card = ({ percentDone = 0, title, done, total, color }) => {
             size={64}
             strokeWidth={4}
             percentage={percentDone}
-            color="var(--text)"
+            color="var(--main-bg)"
           />
         </div>
       </div>

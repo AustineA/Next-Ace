@@ -7,6 +7,7 @@ const Projects = () => {
     <ProjectPage>
       {projects.map((project) => (
         <Card
+          key={project?.id}
           title={project?.title}
           done={project.done}
           total={project.total}
