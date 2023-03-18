@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Squircle } from "corner-smoothing";
 import CircularProgress from "./CircularProgress";
 
-const Card = () => {
+const Card = ({ percentDone = 0 }) => {
   return (
     <ProgresCard cornerRadius={30}>
       <div className="card-inner">
@@ -14,7 +14,7 @@ const Card = () => {
           <CircularProgress
             size={64}
             strokeWidth={4}
-            percentage={62}
+            percentage={percentDone}
             color="var(--text)"
           />
         </div>
