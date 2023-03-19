@@ -14,5 +14,4 @@ const PageContent = styled.section`
   padding: 1.5rem;
   color: var(--white);
   height: 100%;
-  position: relative;
 `;

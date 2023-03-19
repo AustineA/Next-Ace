@@ -17,7 +17,13 @@ export const MenuToggle = ({ toggle, top = 0 }) => (
       scale: 0.85,
       opacity: 0.85,
     }}
-    style={{ top: 20 + top }}
+    initial={{ top: 20 }}
+    animate={{
+      top: 20 + top,
+      transition: {
+        duration: 0.3,
+      },
+    }}
   >
     <svg width="20" height="20" viewBox="0 0 22 22">
       <Path
