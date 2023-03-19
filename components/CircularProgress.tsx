@@ -48,7 +48,7 @@ const CircularProgress = ({ size, strokeWidth, percentage, color }: any) => {
         fontSize="1rem"
         x="50%"
         y="50%"
-        dy="1.2rem"
+        dy="12px"
         textAnchor="middle"
       >
         Done

@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "ionic:build": "npm run build",
-    "ionic:serve": "npm run start"
+    "static": "next build && next export",
+    "ionic:build": "npm run static",
+    "ionic:serve": "npm run dev"
   },
   "dependencies": {
     "@capacitor/app": "4.1.1",
