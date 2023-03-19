@@ -12,7 +12,11 @@ const PageAnimation = ({ children, color, x = "50%", y = "50%" }) => {
     },
     animate: { clipPath: "circle(75%)" },
     exit: {
-      // clipPath: `circle(0% at ${xAxis} ${YAxis})`,
+      // clipPath: `circle(20% at ${xAxis} ${YAxis})`,
+      // opacity: 0,
+      // transition: {
+      //   duration: 0.2,
+      // },
     },
   };
   return (

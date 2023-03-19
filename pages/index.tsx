@@ -11,18 +11,16 @@ export default function Home() {
   return (
     <motion.div
       initial={{
-        scale: 0.97,
-        opacity: 0.5,
+        scale: 1.095,
         y: 30,
       }}
       animate={{
         scale: 1,
-        opacity: 1,
         y: 0,
       }}
       transition={{
-        duration: 0.5,
-        delay: 0.1,
+        duration: 0.2,
+        // delay: 0.1,
       }}
     >
       <Head>
