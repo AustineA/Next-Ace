@@ -4,9 +4,18 @@ import Content from "@/components/Content";
 import Projects from "@/components/Projects";
 import { MenuToggle } from "@/components/MenuToggle";
 import { motion, useCycle } from "framer-motion";
+import { useEffect, useState } from "react";
+import { statusBarHeight } from "@/services/helper";
 
 export default function Home() {
   const [isOpen, toggleOpen] = useCycle(false, true);
+  const [top, setTop] = useState(0);
+
+  useEffect(() => {
+    statusBarHeight().then((h) => {
+      setTop(h);
+    });
+  }, []);
 
   return (
     <motion.div
@@ -29,9 +38,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Content>
+      <Content top={top}>
         <motion.div initial={false} animate={isOpen ? "open" : "closed"}>
-          <MenuToggle toggle={() => toggleOpen()} />
+          <MenuToggle toggle={() => toggleOpen()} top={top} />
         </motion.div>
         <Status />
         <Projects />

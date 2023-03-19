@@ -1,17 +1,11 @@
-import { statusBarHeight } from "@/services/helper";
-import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-const Content = ({ children }) => {
-  const [height, setHeight] = useState(0);
-
-  useEffect(() => {
-    statusBarHeight().then((h) => {
-      setHeight(h);
-    });
-  }, []);
-
-  return <PageContent style={{ paddingTop: height }}>{children}</PageContent>;
+const Content = ({ children, top = 0 }) => {
+  return (
+    <PageContent style={{ paddingTop: top > 0 ? top : 15 }}>
+      {children}
+    </PageContent>
+  );
 };
 
 export default Content;
