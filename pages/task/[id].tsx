@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { projects } from "@/services/data";
 import { Project } from "@/services/types";
+import { Squircle } from "corner-smoothing";
 
 const Task = () => {
   const router = useRouter();
@@ -73,11 +74,79 @@ const Task = () => {
           </p>
         </div>
       </TaskContent>
+
+      <TaskContainer cornerRadius={30} initial={{}}>
+        <div className="task-container-inner">
+          <ul>
+            <li>
+              <div className="check-box"></div>
+              <span className="task-item-title">Some new taxt</span>
+            </li>
+            <li>
+              <div className="check-box"></div>
+              <span className="task-item-title">
+                Maecenas sed diam eget risus varius blandit sit amet non magna.
+              </span>
+            </li>
+            <li>
+              <div className="check-box"></div>
+              <span className="task-item-title">
+                Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+              </span>
+            </li>
+          </ul>
+        </div>
+      </TaskContainer>
     </PageAnimation>
   );
 };
 
 export default Task;
+
+const TaskContainer = styled(motion(Squircle))`
+  background: var(--task-bg);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+
+  .check-box {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.8rem;
+    border: 0.2rem solid var(--text);
+  }
+
+  .task-item-title {
+    width: 90%;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    padding: 1.5rem 0;
+    font-weight: 300;
+    color: var(--text-secondary);
+    font-size: 1.7rem;
+    border-bottom: 0.1rem dashed #a5aa99;
+    display: flex;
+    justify-content: space-between;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 1rem;
+    }
+
+    &:first-child {
+      padding-top: 1rem;
+    }
+  }
+`;
 
 const PageHeader = styled.div`
   .titleHolder {
@@ -131,7 +200,7 @@ const TaskContent = styled.div`
   }
 
   .description {
-    font-size: 1.5rem;
+    font-size: 1.46rem;
     margin-top: 2rem;
   }
 `;

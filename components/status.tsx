@@ -23,7 +23,7 @@ export default Status;
 
 const StatusPage = styled.div`
   span {
-    color: var(--primary);
+    color: var(--text-accent);
   }
 
   p {

@@ -3,20 +3,22 @@
   --primary: #eeffac;
   --text: #1f1919;
   --text-secondary: #53555c;
+  --text-accent: #eeffac;
   --white: #fff;
   --solid-1: #98fff3;
-  --solid-2: var(--primary);
+  --solid-2: #eeffac;
   --solid-3: #ffacf7;
   --solid-4: #ace1ff;
   --solid-5: #ffc1c1;
   --solid-6: #d5c1ff;
-  --solid-7: var(--white);
+  --solid-7: #ebf3f3;
   --solid-8: #c6ffc1;
   --solid-9: #fff9c1;
   --solid-10: #ffbd98;
   --solid-11: #ffece1;
 
   --border-bg: rgba(31, 25, 25, 0.33);
+  --task-bg: rgba(255, 255, 255, 0.5);
 }
 
 // body.dark {
