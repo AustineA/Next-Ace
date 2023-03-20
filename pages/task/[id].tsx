@@ -11,6 +11,7 @@ import { projects } from "@/services/data";
 import { Project } from "@/services/types";
 import { Squircle } from "corner-smoothing";
 import BackgroundFiller from "@/components/ui/BackgroundFiller";
+import CalenderOutline from "@/components/icons/CalenderOutline";
 
 const Task = () => {
   const router = useRouter();
@@ -66,7 +67,10 @@ const Task = () => {
               <h2>Things to do</h2>
               <span>2/10</span>
             </div>
-            <span className="meta-date">Created: Wed 8 Mar. 23</span>
+            <span className="meta-date">
+              <CalenderOutline />
+              Created: Wed 8 Mar. 23
+            </span>
           </div>
           <div className="description">
             <p>
@@ -205,6 +209,10 @@ const TaskContent = styled.div`
 
   .meta-date {
     font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
   }
 
   .description {
