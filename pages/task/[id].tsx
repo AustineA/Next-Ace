@@ -57,7 +57,22 @@ const Task = () => {
         </Header>
       </PageHeader>
 
-      <div></div>
+      <TaskContent>
+        <div className="meta">
+          <div className="meta-title">
+            <h2>Things to do</h2>
+            <span>2/10</span>
+          </div>
+          <span className="meta-date">Created: Wed 8 Mar. 23</span>
+        </div>
+        <div className="description">
+          <p>
+            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cum
+            sociis natoque penatibus et magnis dis parturient montes, nascetur
+            ridiculus mus.
+          </p>
+        </div>
+      </TaskContent>
     </PageAnimation>
   );
 };
@@ -88,5 +103,35 @@ const PageHeader = styled.div`
     height: 4rem;
     display: flex;
     align-items: center;
+  }
+`;
+
+const TaskContent = styled.div`
+  margin-top: 1rem;
+  color: var(--text-secondary);
+
+  .meta-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      margin: 0;
+      font-size: 3rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    span {
+    }
+  }
+
+  .meta-date {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+    margin-top: 2rem;
   }
 `;

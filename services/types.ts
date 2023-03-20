@@ -5,4 +5,8 @@ export interface Project {
   total: number;
   percentDone: number;
   color?: string;
+  createdAt?: string;
+  dueDate?: string;
+  description?: string;
+  tasks?: Object[];
 }

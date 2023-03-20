@@ -39,6 +39,6 @@ export default PageAnimation;
 
 const Animate = styled(motion.section)`
   padding: 1.5rem;
-  color: var(--text);
+  color: var(--main-bg);
   height: 100%;
 `;
