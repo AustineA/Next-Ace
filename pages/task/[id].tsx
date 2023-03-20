@@ -10,6 +10,7 @@ import styled from "styled-components";
 import { projects } from "@/services/data";
 import { Project } from "@/services/types";
 import { Squircle } from "corner-smoothing";
+import BackgroundFiller from "@/components/ui/BackgroundFiller";
 
 const Task = () => {
   const router = useRouter();
@@ -34,8 +35,9 @@ const Task = () => {
 
   return (
     <PageAnimation color={color} x={x} y={y} top={top}>
+      <BackgroundFiller color={color} top={top} />
       <PageHeader>
-        <Header>
+        <Header color={color} top={top}>
           <div className="first">
             <div className="titleHolder">
               <motion.div
@@ -57,51 +59,57 @@ const Task = () => {
           </div>
         </Header>
       </PageHeader>
-
-      <TaskContent>
-        <div className="meta">
-          <div className="meta-title">
-            <h2>Things to do</h2>
-            <span>2/10</span>
+      <PageContent>
+        <TaskContent>
+          <div className="meta">
+            <div className="meta-title">
+              <h2>Things to do</h2>
+              <span>2/10</span>
+            </div>
+            <span className="meta-date">Created: Wed 8 Mar. 23</span>
           </div>
-          <span className="meta-date">Created: Wed 8 Mar. 23</span>
-        </div>
-        <div className="description">
-          <p>
-            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cum
-            sociis natoque penatibus et magnis dis parturient montes, nascetur
-            ridiculus mus.
-          </p>
-        </div>
-      </TaskContent>
+          <div className="description">
+            <p>
+              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cum
+              sociis natoque penatibus et magnis dis parturient montes, nascetur
+              ridiculus mus.
+            </p>
+          </div>
+        </TaskContent>
 
-      <TaskContainer cornerRadius={30} initial={{}}>
-        <div className="task-container-inner">
-          <ul>
-            <li>
-              <div className="check-box"></div>
-              <span className="task-item-title">Some new taxt</span>
-            </li>
-            <li>
-              <div className="check-box"></div>
-              <span className="task-item-title">
-                Maecenas sed diam eget risus varius blandit sit amet non magna.
-              </span>
-            </li>
-            <li>
-              <div className="check-box"></div>
-              <span className="task-item-title">
-                Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-              </span>
-            </li>
-          </ul>
-        </div>
-      </TaskContainer>
+        <TaskContainer cornerRadius={30} initial={{}}>
+          <div className="task-container-inner">
+            <ul>
+              <li>
+                <div className="check-box"></div>
+                <span className="task-item-title">Some new taxt</span>
+              </li>
+              <li>
+                <div className="check-box"></div>
+                <span className="task-item-title">
+                  Maecenas sed diam eget risus varius blandit sit amet non
+                  magna.
+                </span>
+              </li>
+              <li>
+                <div className="check-box"></div>
+                <span className="task-item-title">
+                  Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                </span>
+              </li>
+            </ul>
+          </div>
+        </TaskContainer>
+      </PageContent>
     </PageAnimation>
   );
 };
 
 export default Task;
+
+const PageContent = styled.div`
+  margin-top: 5rem;
+`;
 
 const TaskContainer = styled(motion(Squircle))`
   background: var(--task-bg);
