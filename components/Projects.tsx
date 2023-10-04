@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import Card from "@/components/Card";
+
 import { projects } from "@/services/data";
 import Router from "next/router";
+import Card from "./card";
 
 const Projects = () => {
   const handleClick = (event, project) => {

@@ -1,11 +1,12 @@
 import Head from "next/head";
-import Status from "@/components/Status";
-import Content from "@/components/Content";
+
 import Projects from "@/components/Projects";
 import { MenuToggle } from "@/components/MenuToggle";
 import { motion, useCycle } from "framer-motion";
 import { useEffect, useState } from "react";
 import { statusBarHeight } from "@/services/helper";
+import Status from "@/components/status";
+import Content from "@/components/content";
 
 export default function Home() {
   const [isOpen, toggleOpen] = useCycle(false, true);
